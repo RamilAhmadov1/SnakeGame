@@ -3,28 +3,41 @@ form {
     border: 3px solid #f1f1f1;
 }
 
-html, body {
-    height: 100%; /* Make sure the body takes up the full height */
-    margin: 0; /* Remove default margin */
+/* Full-height and full-width settings */
+html,
+body {
+    height: 100%;
+    /* Make sure the body takes up the full height */
+    margin: 0;
+    /* Remove default margin */
 }
 
+/* Centered header */
 .header-container {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: flex-start; /* Align items to the top */
-    height: 100vh; /* Full viewport height */
-    padding-top: 20px; /* Optional: add some padding from the top */
+    text-align: center;
+    /* Center the text */
+    padding: 20px 0;
+    /* Add some padding */
 }
 
-
-
+/* Flexbox container for image and form */
+.form-container {
+    display: flex;
+    /* Use flexbox to arrange items */
+    justify-content: center;
+    /* Center items horizontally */
+    align-items: flex-start;
+    /* Align items to the top */
+    height: calc(100vh - 100px);
+    /* Full height minus the header height */
+}
 
 /* Full-width inputs */
 input[type=text],
 input[type=password] {
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: 20px 20px;
+    margin: 10px 0;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -56,34 +69,46 @@ button:hover {
 /* Center the avatar image inside this container */
 .imgcontainer {
     text-align: left;
-    margin: 24px 10px 12px 0;
+    margin-right: 5px;
+    /* Add some space between image and form */
 }
 
 /* Avatar image */
 img.avatar {
-    width: 20%;
-    border-radius: 5%;
+    width: 48%;
+    border-radius: 3%;
+    padding: 50px;
 }
 
 /* Add padding to containers */
 .container {
-    padding: 16px;
+    padding: 20px;
+    width: 300px;
+    /* Fixed width for the login form */
 }
 
 /* The "Forgot password" text */
 span.psw {
     float: right;
-    padding-top: 16px;
+    padding-top: 30px;
 }
 
 /* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-    span.psw {
-        display: block;
-        float: none;
+@media screen and (max-width: 600px) {
+    .form-container {
+        flex-direction: column;
+        /* Stack items on small screens */
+        align-items: center;
+        /* Center align */
     }
 
-    .cancelbtn {
+    .imgcontainer {
+        margin: 0 20px 0;
+        /* Reset margins */
+    }
+
+    .container {
         width: 100%;
+        /* Full width on small screens */
     }
 }
